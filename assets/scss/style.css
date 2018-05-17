@@ -1,0 +1,254 @@
+/*-------------------- MIXINS --------------------*/
+/*-------------------- COlORS VARIABLES --------------------*/
+/*-------------------- FONTS --------------------*/
+@font-face {
+  font-family: KlavikaB;
+  src: url(../font/klavika-bold-webfont.woff); }
+@font-face {
+  font-family: KlavikaL;
+  src: url(../font/klavika-light-webfont.woff); }
+@font-face {
+  font-family: KlavikaM;
+  src: url(../font/klavika-medium-webfont.woff); }
+@font-face {
+  font-family: KlavikaR;
+  src: url(../font/klavika-regular-webfont.woff); }
+/*-------------------- ANIMATIONS CSS--------------------*/
+@keyframes bounce {
+  0% {
+    transform: translateY(-15px); }
+  100% {
+    transform: translateY(0px); } }
+.bounce {
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse; }
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0); }
+  100% {
+    transform: scale(1); } }
+.scaleIn {
+  animation-name: scaleIn;
+  animation-iteration-count: 1;
+  animation-duration: 1s; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 1s; }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+.fadeOut {
+  animation-name: fadeOut;
+  animation-duration: .2s;
+  animation-fill-mode: forwards; }
+
+/*-------------------- RESETS--------------------*/
+html, body, header, nav, footer, section, div, span, h1, h2, h3, p, a, blockquote, cite, img, ol, ul, li, form, fieldset, label, legend {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-weight: normal; }
+
+/*-------------------- BASES--------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+html, body {
+  font-size: 2vh;
+  width: 100%;
+  height: 100%; }
+
+body {
+  overflow: hidden; }
+
+p, a {
+  color: #fff;
+  font-family: "KlavikaR"; }
+
+/*-------------------- STYLE--------------------*/
+#home_boarding {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+  animation-delay: 4s;
+  pointer-events: none; }
+  #home_boarding #monk img {
+    margin-bottom: 20%; }
+  #home_boarding #monk p {
+    text-align: center;
+    visibility: hidden; }
+  #home_boarding #monk #patience {
+    opacity: 0;
+    animation-delay: 5s; }
+  #home_boarding #monk #padawan {
+    opacity: 0;
+    animation-delay: 6s; }
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12226px;
+  height: 100%;
+  background-image: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 100% auto;
+  z-index: -1;
+  transition: all 1s; }
+
+nav {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: 0; }
+  nav #logo {
+    margin-right: 1.2em;
+    margin-bottom: 0;
+    float: right; }
+  nav #paginationContainer {
+    position: fixed;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 1.5em;
+    margin-top: 2.5em;
+    border-top: 1.5px dotted #fff;
+    border-right: 1.5px dotted #fff;
+    border-bottom: 1.5px dotted #fff; }
+    nav #paginationContainer .pagination {
+      width: 2em;
+      height: 1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: .5em;
+      padding-right: .5em;
+      color: #fff;
+      border-left: 1.5px dotted #fff;
+      text-decoration: none;
+      cursor: pointer;
+      font-family: "KlavikaR";
+      font-size: 1em; }
+      nav #paginationContainer .pagination a {
+        border-left: 1.5px dotted #fff; }
+      nav #paginationContainer .pagination:hover {
+        background-color: #fff; }
+    nav #paginationContainer .active {
+      background-color: #fff; }
+
+.advice, .adviceLeft, .adviceRight, .adviceRight1 {
+  position: fixed;
+  text-transform: uppercase;
+  text-decoration: underline;
+  pointer-events: none;
+  color: #fff;
+  font-size: 3em; }
+
+.advice {
+  left: 2vw;
+  top: 2vh; }
+
+.adviceLeft {
+  left: 6vw;
+  top: 41vh; }
+
+.adviceRight {
+  text-align: right;
+  right: 6vw;
+  top: 41vh; }
+
+.adviceRight1 {
+  text-align: right;
+  right: 6vw;
+  top: 33.5vh; }
+
+#contact {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #080808;
+  z-index: -10;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center; }
+  #contact h2 {
+    position: fixed;
+    top: 3vh;
+    right: 3vw;
+    text-transform: uppercase;
+    text-decoration: underline;
+    pointer-events: none;
+    color: #fff;
+    font-family: "KlavikaR";
+    font-size: 3em; }
+  #contact .text {
+    position: fixed;
+    top: 42vh;
+    right: 6vw;
+    text-align: right;
+    font-family: "KlavikaR";
+    font-size: 1em; }
+  #contact a {
+    color: #fff; }
+
+.previous {
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  position: fixed;
+  top: calc(50% - 50px);
+  left: 50px;
+  width: 30px;
+  height: 30px;
+  transform: rotate(135deg);
+  transition: all .2s;
+  cursor: pointer; }
+  .previous:hover {
+    border-right: 4px solid white;
+    border-bottom: 4px solid white; }
+
+.next {
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  position: fixed;
+  top: calc(50% - 50px);
+  right: 50px;
+  width: 30px;
+  height: 30px;
+  transform: rotate(-45deg);
+  transition: all .2s;
+  cursor: pointer; }
+  .next:hover {
+    border-right: 4px solid white;
+    border-bottom: 4px solid white; }
+
+/*# sourceMappingURL=style.css.map */
