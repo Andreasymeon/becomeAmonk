@@ -113,9 +113,10 @@ function showText(indexPage, indexPreviousPage) {
 	//prev page  
 	console.log(indexPreviousPage)
 	let advicePrevDiv = document.querySelector('#' + adviceIds[indexPreviousPage]);
-
-	advicePrevDiv.classList.remove('fadeIn');
-	advicePrevDiv.classList.add('fadeOut');
+	if (indexPreviousPage !== 9) {
+		advicePrevDiv.classList.remove('fadeIn');
+		advicePrevDiv.classList.add('fadeOut');
+	}
 	if (indexPage != 9)	{
 		adviceDiv.classList.add('fadeIn');
 		adviceDiv.classList.remove('fadeOut');

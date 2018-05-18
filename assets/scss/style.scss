@@ -63,7 +63,6 @@ $klavikaR: 'KlavikaR';
 
 .scaleIn {
 	animation-name: scaleIn;
-	animation-iteration-count: 1;
 	animation-duration: 1s;
 }
 
@@ -98,6 +97,26 @@ $klavikaR: 'KlavikaR';
   animation-fill-mode: forwards;
 }
 
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+  	opacity: 0;
+  }
+}
+.fadeInOut {
+  animation-name: fadeInOut;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
 /*-------------------- RESETS--------------------*/
 html, body, header, nav, footer, section, div, span, h1, h2, h3, p, a, blockquote, cite, img, ol, ul, li, form, fieldset, label, legend  {
 	margin: 0;
@@ -125,6 +144,7 @@ html, body {
 
 body {
 	overflow: hidden;
+	background-color: #080808;
 }
 
 p, a {
@@ -151,22 +171,29 @@ p, a {
     pointer-events: none;
     #monk {
     	img {
+    		@include w-h(80%, auto); 
     		margin-bottom: 20%;
-    		}
-		p {
-			text-align: center;
-			visibility: hidden;
-		}
-		#patience {
-			opacity: 0;
-			animation-delay: 5s;
-		}
-		#padawan {
-			opacity: 0;
-			animation-delay: 6s;
-		}
+    	}
 	}
-}                                                                                                                                                  
+	p {
+		text-align: center;
+	}
+	.textLoading {
+		position: absolute;
+	}
+	#patience {
+		opacity:0;
+		position: relative;
+		top: 5em;
+		
+	}
+	#padawan {
+		opacity:0;
+		animation-delay: 2s;
+		position: relative;
+		top: 4em;
+	}
+}                                                                                                         
 .background	{
 	position: fixed;
 	top: 0;
@@ -270,7 +297,7 @@ nav {
 #contact {
 	@include w-h(100%, 100%);
 	position: fixed;
-	background-color: #080808;
+	
 	z-index: -10;
 	display: flex;
     flex-direction: column;
@@ -296,6 +323,8 @@ nav {
 		top: 42vh;
 		right: 6vw;
 		text-align: right;
+		pointer-events: none;
+
 		font: {
 			family: $klavikaR;
 			size: 1em;
@@ -304,6 +333,8 @@ nav {
 	
 	a {
 		color: #fff;
+		cursor: pointer;
+		pointer-events: none;
 	}
 	
 	
